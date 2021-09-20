@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Kernel V10.4.1
+ * FreeRTOS V202107.00
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -19,10 +19,9 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- * http://www.FreeRTOS.org
- * http://aws.amazon.com/freertos
+ * https://www.FreeRTOS.org
+ * https://github.com/FreeRTOS
  *
- * 1 tab == 4 spaces!
  */
 
 /*
@@ -35,7 +34,7 @@
  *
  * Also note that it is assumed this demo is going to be used for short periods
  * of time only, and therefore timer overflows are not handled.
-*/
+ */
 
 #include <time.h>
 
@@ -49,20 +48,20 @@ static unsigned long ulStartTimeNs;
 
 void vConfigureTimerForRunTimeStats( void )
 {
-struct timespec xNow;
+    struct timespec xNow;
 
-	clock_gettime(CLOCK_MONOTONIC, &xNow);
-	ulStartTimeNs = xNow.tv_sec * 1000000000ul + xNow.tv_nsec;
+    clock_gettime( CLOCK_MONOTONIC, &xNow );
+    ulStartTimeNs = xNow.tv_sec * 1000000000ul + xNow.tv_nsec;
 }
 /*-----------------------------------------------------------*/
 
 unsigned long ulGetRunTimeCounterValue( void )
 {
-struct timespec xNow;
+    struct timespec xNow;
 
-	/* Time at start. */
-	clock_gettime(CLOCK_MONOTONIC, &xNow);
+    /* Time at start. */
+    clock_gettime( CLOCK_MONOTONIC, &xNow );
 
-	return xNow.tv_sec * 1000000000ul + xNow.tv_nsec - ulStartTimeNs;
+    return xNow.tv_sec * 1000000000ul + xNow.tv_nsec - ulStartTimeNs;
 }
 /*-----------------------------------------------------------*/

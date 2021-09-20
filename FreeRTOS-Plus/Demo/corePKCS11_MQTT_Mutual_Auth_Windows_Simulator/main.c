@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Kernel V10.3.0
+ * FreeRTOS V202107.00
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -19,14 +19,13 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- * http://www.FreeRTOS.org
- * http://aws.amazon.com/freertos
+ * https://www.FreeRTOS.org
+ * https://github.com/FreeRTOS
  *
- * 1 tab == 4 spaces!
  */
 
 /***
- * See https://www.FreeRTOS.org/pkcs11/index.html for configuration and usage instructions.
+ * See https://www.FreeRTOS.org/pkcs11/ for configuration and usage instructions.
  ***/
 
 /* Standard includes. */
@@ -49,7 +48,7 @@
 #include "demo_config.h"
 
 /* Demo logging includes. */
-#include "demo_logging.h"
+#include "logging.h"
 
 /*
  * Prototypes for the demos that can be started from this project.  Note the
@@ -97,7 +96,7 @@ static UBaseType_t ulNextRand;
 int main( void )
 {
     /***
-     * See https://www.FreeRTOS.org/mqtt_lts/index.html for configuration and usage instructions.
+     * See https://www.FreeRTOS.org/coremqtt for configuration and usage instructions.
      ***/
 
     /* Miscellaneous initialization including preparing the logging and seeding
